@@ -12,10 +12,11 @@ puts "----------"
 # Your code goes here ...
 
 
-# @store2.employees.create(hourly_rate: 35).errors.each {|e| puts e.full_message}
+@store2.employees.create(hourly_rate: 35).errors.each {|e| puts e.full_message}
 
 puts "Give me a store name:"
 print "> "
 input = $stdin.gets.chomp
 
+# present all the messages
 Store.create(name: input).errors.each {|e| puts e.full_message}

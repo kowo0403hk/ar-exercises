@@ -5,6 +5,7 @@ class Store < ActiveRecord::Base
   validates :annual_revenue, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :mens_apparel, :womens_apparel, inclusion:{in: [true, false], message: "- Please input true or false."}
 
+  # IMPORTANT! if we use customer validation method, the keyword validate has to be without s at the end.
   validate :at_least_one_type_of_apparel
 
   def at_least_one_type_of_apparel
